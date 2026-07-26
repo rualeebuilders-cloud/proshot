@@ -22,8 +22,8 @@ const VARIANT_PROMPTS: Record<string, { v1: string; v2: string }> = {
     v2: "close-up aesthetic creator headshot, shoulders and head framing, neat light knit sweater, bright natural window daylight space, clear glowing skin, friendly radiant smile, 8k resolution",
   },
   passport_visa: {
-    v1: "official US passport photo standard, tight head-and-shoulders ID framing, face taking up 60% of total height, neutral calm expression, facing forward looking directly at camera, clean dark shirt, solid off-white studio background, perfectly even passport lighting, sharp 8k ID portrait",
-    v2: "official biometric visa ID photo, tight head-and-shoulders ID framing, face taking up 60% of total height, front facing neutral expression, white studio background, clear face lighting, neat formal collared shirt, high resolution studio photograph",
+    v1: "official US passport photo standard, tight head-and-shoulders ID framing, face taking up 60% of total height, neutral calm expression, facing forward looking directly at camera, crisp white shirt, solid off-white studio background, perfectly even passport lighting, sharp 8k ID portrait",
+    v2: "official biometric visa ID photo, tight head-and-shoulders ID framing, face taking up 60% of total height, front facing neutral expression, white studio background, clear face lighting, crisp white collared shirt, high resolution studio photograph",
   },
 };
 

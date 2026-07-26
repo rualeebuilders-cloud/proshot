@@ -6,24 +6,24 @@ export const maxDuration = 60;
 
 const VARIANT_PROMPTS: Record<string, { v1: string; v2: string }> = {
   realtor_sales: {
-    v1: "professional real estate agent headshot, confident friendly smile, dark navy tailored blazer, bright clean modern office background, soft warm lighting, sharp focus, 8k resolution",
-    v2: "professional real estate agent headshot, radiant warm smile, elegant beige or light blazer, luxury bright interior background, natural window daylight, 8k resolution",
+    v1: "tight close-up professional real estate agent headshot, shoulders and head framing, face filling 60% of frame, confident friendly smile, dark navy tailored blazer, bright clean modern office background, soft warm lighting, sharp focus, 8k resolution",
+    v2: "tight close-up professional real estate agent headshot, shoulders and head framing, radiant warm smile, elegant beige blazer, luxury bright interior background, natural window daylight, 8k resolution",
   },
   tech_startup: {
-    v1: "modern tech founder headshot, smart casual dark blazer, no tie, relaxed confident expression, softly blurred modern tech workspace backdrop, professional LinkedIn photo, high detail",
-    v2: "modern tech startup founder portrait, neat navy sweater over white shirt, friendly approachable smile, bright modern open office backdrop with soft plants, 8k resolution",
+    v1: "close-up modern tech founder headshot, shoulders and head framing, smart casual dark blazer, no tie, relaxed confident expression, softly blurred modern tech workspace backdrop, professional LinkedIn photo, high detail",
+    v2: "close-up modern tech startup founder portrait, shoulders and head framing, neat navy sweater over white shirt, friendly approachable smile, bright modern open office backdrop, 8k resolution",
   },
   corporate_law: {
-    v1: "executive corporate headshot, dark navy business suit, white shirt, neat tie, clean neutral studio background, authoritative posture, sharp professional lighting, 8k resolution",
-    v2: "executive attorney headshot, charcoal grey business suit, light blue shirt, clean executive office background, confident warm smile, 8k resolution",
+    v1: "tight executive corporate headshot, shoulders and head framing, face filling 60% of frame, dark navy business suit, white shirt, neat tie, clean neutral studio background, authoritative posture, sharp professional lighting, 8k resolution",
+    v2: "tight executive attorney headshot, shoulders and head framing, charcoal grey business suit, light blue shirt, clean executive office background, confident warm smile, 8k resolution",
   },
   medical_creator: {
-    v1: "radiant professional doctor portrait, clean bright white lab coat or smart blazer, warm approachable smile, soft high-key studio beauty lighting, flawless complexion, light grey background, high detail",
-    v2: "aesthetic creator & public speaker headshot, neat light knit sweater, bright natural window daylight space, clear glowing skin, friendly radiant smile, 8k resolution",
+    v1: "close-up radiant professional doctor portrait, shoulders and head framing, clean bright white lab coat, warm approachable smile, soft high-key studio beauty lighting, flawless complexion, light grey background, high detail",
+    v2: "close-up aesthetic creator headshot, shoulders and head framing, neat light knit sweater, bright natural window daylight space, clear glowing skin, friendly radiant smile, 8k resolution",
   },
   passport_visa: {
-    v1: "official US passport photo standard, neutral calm expression, facing forward looking directly at camera, clean dark shirt, solid off-white studio background, perfectly even passport lighting, sharp 8k ID portrait",
-    v2: "official biometric visa ID photo, front facing neutral expression, white studio background, clear face lighting, neat formal collared shirt, high resolution studio photograph",
+    v1: "official US passport photo standard, tight head-and-shoulders ID framing, face taking up 60% of total height, neutral calm expression, facing forward looking directly at camera, clean dark shirt, solid off-white studio background, perfectly even passport lighting, sharp 8k ID portrait",
+    v2: "official biometric visa ID photo, tight head-and-shoulders ID framing, face taking up 60% of total height, front facing neutral expression, white studio background, clear face lighting, neat formal collared shirt, high resolution studio photograph",
   },
 };
 

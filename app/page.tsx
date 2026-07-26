@@ -495,8 +495,8 @@ export default function Home() {
                 }`}
               >
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-neutral-200/70 bg-neutral-100 transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.015]">
-                  <img src="/api/demo-image/smart_after?v=us-diversity-v1" alt="Tech & Founder" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-                  <img src="/api/demo-image/smart_before?v=us-diversity-v1" alt="Original Selfie" className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <img src="/api/demo-image/smart_after?v=smart-optical-v1" alt="Tech & Founder" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+                  <img src="/api/demo-image/smart_before?v=smart-optical-v1" alt="Original Selfie" className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <div className="mt-3.5 space-y-1.5">
                   <div className="flex items-center justify-between">

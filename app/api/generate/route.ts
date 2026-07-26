@@ -14,8 +14,8 @@ const VARIANT_PROMPTS: Record<string, { v1: string; v2: string }> = {
     v2: "close-up modern tech startup founder portrait, shoulders and head framing, neat navy sweater over white shirt, friendly approachable smile, bright modern open office backdrop, 8k resolution",
   },
   corporate_law: {
-    v1: "tight executive corporate headshot, shoulders and head framing, face filling 60% of frame, dark navy business suit, white shirt, open collar, no tie, clean sleek modern minimal background, authoritative posture, sharp professional lighting, 8k resolution",
-    v2: "tight executive attorney headshot, shoulders and head framing, face filling 60% of frame, charcoal grey business suit, light blue shirt, open collar, no tie, clean minimal premium background, confident warm smile, 8k resolution",
+    v1: "tight executive corporate headshot, shoulders and head framing, face filling 60% of frame, dark navy business suit, white shirt, neat tie, clean sleek modern minimal background, authoritative posture, sharp professional lighting, 8k resolution",
+    v2: "tight executive attorney headshot, shoulders and head framing, face filling 60% of frame, charcoal grey business suit, light blue shirt, neat professional tie, clean minimal premium background, confident warm smile, 8k resolution",
   },
   medical_creator: {
     v1: "close-up radiant professional doctor portrait, shoulders and head framing, clean bright white lab coat, warm approachable smile, soft high-key studio beauty lighting, flawless complexion, light grey background, high detail",
@@ -42,6 +42,12 @@ export async function POST(req: NextRequest) {
 
     const variantSet = VARIANT_PROMPTS[style] || VARIANT_PROMPTS.realtor_sales;
 
+    const baseNegative = "messy hair, unkempt hair, bedhead, blurry, low quality, distorted face, plastic skin, wax figure, CG render, 3D model, anime, cartoon, heavy airbrushed, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes, dark circles";
+    const noTieStyles = ["passport_visa", "tech_startup"];
+    const negativePrompt = noTieStyles.includes(style) 
+      ? `necktie, tie, bowtie, closed collar, ${baseNegative}` 
+      : baseNegative;
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [res1, res2]: any = await Promise.all([
       fal.subscribe("fal-ai/flux-pulid", {
@@ -52,7 +58,7 @@ export async function POST(req: NextRequest) {
           num_inference_steps: 28,
           guidance_scale: 4.2,
           id_weight: 0.95,
-          negative_prompt: "necktie, tie, bowtie, closed collar, messy hair, unkempt hair, bedhead, blurry, low quality, distorted face, plastic skin, wax figure, CG render, 3D model, anime, cartoon, heavy airbrushed, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes, dark circles",
+          negative_prompt: negativePrompt,
         },
       }),
       fal.subscribe("fal-ai/flux-pulid", {
@@ -63,7 +69,7 @@ export async function POST(req: NextRequest) {
           num_inference_steps: 28,
           guidance_scale: 4.2,
           id_weight: 0.95,
-          negative_prompt: "necktie, tie, bowtie, closed collar, messy hair, unkempt hair, bedhead, blurry, low quality, distorted face, plastic skin, wax figure, CG render, 3D model, anime, cartoon, heavy airbrushed, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes, dark circles",
+          negative_prompt: negativePrompt,
         },
       }),
     ]);

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import UploadCard from "./components/UploadCard";
 import BeforeAfterSlider from "./components/BeforeAfterSlider";
+import PricingModal from "./components/PricingModal";
 
 type GenerationStep = "idle" | "generating" | "success" | "error";
 
@@ -58,6 +59,7 @@ export default function Home() {
   const [selectedRatio, setSelectedRatio] = useState<"original" | "1:1" | "4:3" | "4:5">("original");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [showPricing, setShowPricing] = useState<boolean>(false);
 
   const handleSelectStyle = (styleId: string) => {
     setSelectedStyle(styleId);
@@ -637,10 +639,7 @@ export default function Home() {
                 </ul>
               </div>
               <button
-                onClick={() => {
-                  const el = document.getElementById("upload-area");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }}
+                onClick={() => setShowPricing(true)}
                 className="w-full py-3.5 px-4 rounded-xl border border-neutral-300 text-neutral-800 font-bold text-xs hover:bg-neutral-50 transition-colors text-center"
               >
                 Get Starter Pack
@@ -677,10 +676,7 @@ export default function Home() {
                 </ul>
               </div>
               <button
-                onClick={() => {
-                  const el = document.getElementById("upload-area");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }}
+                onClick={() => setShowPricing(true)}
                 className="w-full py-3.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-colors shadow-lg shadow-purple-600/30 text-center"
               >
                 Get Professional Pack
@@ -714,10 +710,7 @@ export default function Home() {
                 </ul>
               </div>
               <button
-                onClick={() => {
-                  const el = document.getElementById("upload-area");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }}
+                onClick={() => setShowPricing(true)}
                 className="w-full py-3.5 px-4 rounded-xl border border-neutral-300 text-neutral-800 font-bold text-xs hover:bg-neutral-50 transition-colors text-center"
               >
                 Get Executive Pack
@@ -832,6 +825,13 @@ export default function Home() {
           PROSHOT &mdash; GLOBAL AI BUSINESS BUILDERS
         </p>
       </footer>
+
+      {showPricing && (
+        <PricingModal 
+          onClose={() => setShowPricing(false)} 
+          onSuccess={() => setShowPricing(false)} 
+        />
+      )}
     </div>
   );
 }

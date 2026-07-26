@@ -561,8 +561,8 @@ export default function Home() {
                 }`}
               >
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-neutral-200/70 bg-neutral-100 transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.015]">
-                  <img src="/api/demo-image/passport_after?v=us-global-v1" alt="Passport & Visa ID" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-                  <img src="/api/demo-image/passport_before?v=us-global-v1" alt="Original Selfie" className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <img src="/api/demo-image/passport_after?v=passport-white-v1" alt="Passport & Visa ID" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+                  <img src="/api/demo-image/passport_before?v=passport-white-v1" alt="Original Selfie" className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <div className="mt-3.5 space-y-1.5">
                   <div className="flex items-center justify-between">

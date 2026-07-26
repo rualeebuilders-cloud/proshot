@@ -14,8 +14,8 @@ const VARIANT_PROMPTS: Record<string, { v1: string; v2: string }> = {
     v2: "close-up modern tech startup founder portrait, shoulders and head framing, neat navy sweater over white shirt, friendly approachable smile, bright modern open office backdrop, 8k resolution",
   },
   corporate_law: {
-    v1: "tight executive corporate headshot, shoulders and head framing, face filling 60% of frame, dark navy business suit, white shirt, neat tie, clean neutral studio background, authoritative posture, sharp professional lighting, 8k resolution",
-    v2: "tight executive attorney headshot, shoulders and head framing, charcoal grey business suit, light blue shirt, clean executive office background, confident warm smile, 8k resolution",
+    v1: "tight executive corporate headshot, shoulders and head framing, face filling 60% of frame, dark navy business suit, white shirt, neat tie, clean sleek modern minimal background, authoritative posture, sharp professional lighting, 8k resolution",
+    v2: "tight executive attorney headshot, shoulders and head framing, face filling 60% of frame, charcoal grey business suit, light blue shirt, clean minimal premium background, confident warm smile, 8k resolution",
   },
   medical_creator: {
     v1: "close-up radiant professional doctor portrait, shoulders and head framing, clean bright white lab coat, warm approachable smile, soft high-key studio beauty lighting, flawless complexion, light grey background, high detail",
@@ -46,24 +46,24 @@ export async function POST(req: NextRequest) {
     const [res1, res2]: any = await Promise.all([
       fal.subscribe("fal-ai/flux-pulid", {
         input: {
-          prompt: `${variantSet.v1}, most flattering best-version portrait of the person, confident magnetic gaze, perfectly tailored attire, immaculate studio softbox lighting, ultra sharp focus on eyes, 8k resolution studio photography`,
+          prompt: `${variantSet.v1}, most flattering best-version portrait of the person, confident magnetic gaze, sparkling catchlights in eyes, vivid iris detail, subsurface scattering skin physics, dewy healthy skin glow, visible micro pores, perfectly tailored attire, immaculate studio softbox lighting, ultra sharp focus on eyes, 8k resolution studio photography`,
           reference_image_url: referenceUrl,
           image_size: "portrait_4_3",
           num_inference_steps: 28,
           guidance_scale: 4.2,
           id_weight: 0.95,
-          negative_prompt: "blurry, low quality, distorted face, plastic skin, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes",
+          negative_prompt: "blurry, low quality, distorted face, plastic skin, wax figure, CG render, 3D model, anime, cartoon, heavy airbrushed, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes, dark circles",
         },
       }),
       fal.subscribe("fal-ai/flux-pulid", {
         input: {
-          prompt: `${variantSet.v2}, prime peak attractiveness corporate portrait, warm trustworthy charismatic smile, sharp executive attire, high-end studio illumination, flawless natural skin, 8k resolution`,
+          prompt: `${variantSet.v2}, prime peak attractiveness corporate portrait, warm trustworthy charismatic smile, sparkling catchlights in eyes, vivid iris detail, subsurface scattering skin physics, dewy healthy skin glow, visible micro pores, sharp executive attire, high-end studio illumination, flawless natural skin, 8k resolution`,
           reference_image_url: referenceUrl,
           image_size: "portrait_4_3",
           num_inference_steps: 28,
           guidance_scale: 4.2,
           id_weight: 0.95,
-          negative_prompt: "blurry, low quality, distorted face, plastic skin, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes",
+          negative_prompt: "blurry, low quality, distorted face, plastic skin, wax figure, CG render, 3D model, anime, cartoon, heavy airbrushed, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes, dark circles",
         },
       }),
     ]);

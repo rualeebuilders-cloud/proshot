@@ -219,7 +219,7 @@ export default function Home() {
               <div className="flex flex-col items-center shrink-0">
                 <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider mb-1">Before</span>
                 <div className="w-[90px] md:w-[105px] aspect-[3/4] rounded-xl overflow-hidden shadow-sm border border-neutral-200">
-                  <img src="/api/demo-image/corporate_before?v=us-global-v1" alt="Before Selfie" className="w-full h-full object-cover" />
+                  <img src="/api/demo-image/corporate_before?v=corporate-optical-v1" alt="Before Selfie" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="text-purple-500 shrink-0 pt-4">
@@ -230,7 +230,7 @@ export default function Home() {
               <div className="flex flex-col items-center shrink-0">
                 <span className="text-[10px] font-bold text-purple-600 uppercase tracking-wider mb-1">After</span>
                 <div className="w-[90px] md:w-[105px] aspect-[3/4] rounded-xl overflow-hidden shadow-md border border-purple-200">
-                  <img src="/api/demo-image/corporate_after?v=us-global-v1" alt="After Professional" className="w-full h-full object-cover" />
+                  <img src="/api/demo-image/corporate_after?v=corporate-optical-v1" alt="After Professional" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="flex-1 min-w-0 text-left pl-2">
@@ -528,8 +528,8 @@ export default function Home() {
                 }`}
               >
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-neutral-200/70 bg-neutral-100 transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.015]">
-                  <img src="/api/demo-image/corporate_after?v=aurafix-v7" alt="Corporate & Law" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-                  <img src="/api/demo-image/corporate_before?v=aurafix-v7" alt="Original Selfie" className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <img src="/api/demo-image/corporate_after?v=corporate-optical-v1" alt="Corporate & Law" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+                  <img src="/api/demo-image/corporate_before?v=corporate-optical-v1" alt="Original Selfie" className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <div className="mt-3.5 space-y-1.5">
                   <div className="flex items-center justify-between">

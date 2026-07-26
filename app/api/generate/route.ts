@@ -23,7 +23,7 @@ const VARIANT_PROMPTS: Record<string, { v1: string; v2: string }> = {
   },
   passport_visa: {
     v1: "official US passport photo standard, tight head-and-shoulders ID framing, face taking up 60% of total height, neutral calm expression, facing forward looking directly at camera, dark suit jacket with crisp white shirt, perfectly groomed neat hair, professional salon hair styling, solid off-white studio background, perfectly even passport lighting, sharp 8k ID portrait",
-    v2: "official biometric visa ID photo, tight head-and-shoulders ID framing, face taking up 60% of total height, front facing neutral expression, perfectly groomed neat hair, professional salon hair styling, white studio background, clear face lighting, dark suit jacket with crisp white collared shirt, high resolution studio photograph",
+    v2: "official biometric visa ID photo, tight head-and-shoulders ID framing, face taking up 60% of total height, front facing neutral expression, perfectly groomed neat hair, professional salon hair styling, premium off-white studio background, clear face lighting, dark suit jacket with crisp white collared shirt, high resolution studio photograph",
   },
 };
 

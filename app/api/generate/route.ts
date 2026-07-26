@@ -14,8 +14,8 @@ const VARIANT_PROMPTS: Record<string, { v1: string; v2: string }> = {
     v2: "close-up modern tech startup founder portrait, shoulders and head framing, neat navy sweater over white shirt, friendly approachable smile, bright modern open office backdrop, 8k resolution",
   },
   corporate_law: {
-    v1: "tight executive corporate headshot, shoulders and head framing, face filling 60% of frame, dark navy business suit, white shirt, neat tie, clean sleek modern minimal background, authoritative posture, sharp professional lighting, 8k resolution",
-    v2: "tight executive attorney headshot, shoulders and head framing, face filling 60% of frame, charcoal grey business suit, light blue shirt, open collar, no tie, clean minimal premium background, confident warm smile, 8k resolution",
+    v1: "tight executive corporate headshot, shoulders and head framing, face filling 60% of frame, dark navy business suit, crisp white shirt, neat tie, perfectly groomed neat hair, professional salon hair styling, clean premium studio background, authoritative posture, sharp professional lighting, 8k resolution",
+    v2: "tight executive attorney headshot, shoulders and head framing, face filling 60% of frame, charcoal grey business suit, crisp white shirt, open collar, no tie, perfectly groomed neat hair, professional salon hair styling, clean premium studio background, confident warm smile, 8k resolution",
   },
   medical_creator: {
     v1: "close-up radiant professional doctor portrait, shoulders and head framing, clean bright white lab coat, warm approachable smile, soft high-key studio beauty lighting, flawless complexion, light grey background, high detail",

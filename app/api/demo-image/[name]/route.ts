@@ -5,8 +5,8 @@ import path from "path";
 const IMAGE_MAP: Record<string, string> = {
   corporate_before: "global_corporate_before",
   corporate_after: "global_corporate_after",
-  smart_before: "global_smart_before",
-  smart_after: "global_smart_after",
+  smart_before: "global_african_american_before",
+  smart_after: "global_african_american_after",
   artistic_before: "global_artistic_before",
   artistic_after: "global_artistic_after",
   studio_before: "global_studio_before",
@@ -16,7 +16,7 @@ const IMAGE_MAP: Record<string, string> = {
   // Aliases
   before: "global_corporate_before",
   corporate: "global_corporate_after",
-  smart: "global_smart_after",
+  smart: "global_african_american_after",
   artistic: "global_artistic_after",
   studio: "global_studio_after",
   passport: "global_passport_after",

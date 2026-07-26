@@ -7,36 +7,48 @@ import { X, Check } from "lucide-react";
 interface PricingModalProps {
   onClose: () => void;
   onSuccess: () => void;
+  initialPackageId?: string;
 }
 
 const PACKAGES = [
   {
     id: "starter",
     name: "Starter Pack",
-    price: "4.99",
+    price: "9.99",
     features: [
-      "1 Professional AI Headshot",
-      "High-Resolution Download",
-      "Standard Priority Generation",
+      "4 HD Headshot Variants",
+      "Full HD Resolution PNGs",
+      "1:1 Square & 4:3 Crop Included",
     ],
     recommended: false,
   },
   {
-    id: "pro",
-    name: "Pro Pack",
-    price: "9.99",
+    id: "professional",
+    name: "Professional Pack",
+    price: "19.99",
     features: [
-      "4 Different Variations",
-      "4K Ultra-HD Downloads",
-      "Priority Queue Generation",
-      "All Background Colors",
+      "10 HD Headshot Variants",
+      "All 4 Aspect Ratios",
+      "Commercial & Licensing Rights",
     ],
     recommended: true,
   },
+  {
+    id: "executive",
+    name: "Executive Pack",
+    price: "39.99",
+    features: [
+      "24 Ultra-HD Variations",
+      "Priority VIP Queue",
+      "Team Branding & Full Media Kit",
+    ],
+    recommended: false,
+  },
 ];
 
-export default function PricingModal({ onClose, onSuccess }: PricingModalProps) {
-  const [selectedPack, setSelectedPack] = useState(PACKAGES[1]);
+export default function PricingModal({ onClose, onSuccess, initialPackageId = "professional" }: PricingModalProps) {
+  const defaultPack = PACKAGES.find((p) => p.id === initialPackageId) || PACKAGES[1];
+  const [selectedPack, setSelectedPack] = useState(defaultPack);
   const [isProcessing, setIsProcessing] = useState(false);
 
   // We use "test" for the sandbox environment clientId during development.

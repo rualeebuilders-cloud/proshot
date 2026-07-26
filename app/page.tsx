@@ -60,6 +60,7 @@ export default function Home() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [showPricing, setShowPricing] = useState<boolean>(false);
+  const [selectedPricingPackage, setSelectedPricingPackage] = useState<string>("professional");
 
   const handleSelectStyle = (styleId: string) => {
     setSelectedStyle(styleId);
@@ -639,7 +640,10 @@ export default function Home() {
                 </ul>
               </div>
               <button
-                onClick={() => setShowPricing(true)}
+                onClick={() => {
+                  setSelectedPricingPackage("starter");
+                  setShowPricing(true);
+                }}
                 className="w-full py-3.5 px-4 rounded-xl border border-neutral-300 text-neutral-800 font-bold text-xs hover:bg-neutral-50 transition-colors text-center"
               >
                 Get Starter Pack
@@ -676,7 +680,10 @@ export default function Home() {
                 </ul>
               </div>
               <button
-                onClick={() => setShowPricing(true)}
+                onClick={() => {
+                  setSelectedPricingPackage("professional");
+                  setShowPricing(true);
+                }}
                 className="w-full py-3.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-colors shadow-lg shadow-purple-600/30 text-center"
               >
                 Get Professional Pack
@@ -710,7 +717,10 @@ export default function Home() {
                 </ul>
               </div>
               <button
-                onClick={() => setShowPricing(true)}
+                onClick={() => {
+                  setSelectedPricingPackage("executive");
+                  setShowPricing(true);
+                }}
                 className="w-full py-3.5 px-4 rounded-xl border border-neutral-300 text-neutral-800 font-bold text-xs hover:bg-neutral-50 transition-colors text-center"
               >
                 Get Executive Pack
@@ -830,6 +840,7 @@ export default function Home() {
         <PricingModal 
           onClose={() => setShowPricing(false)} 
           onSuccess={() => setShowPricing(false)} 
+          initialPackageId={selectedPricingPackage}
         />
       )}
     </div>

@@ -22,8 +22,8 @@ const VARIANT_PROMPTS: Record<string, { v1: string; v2: string }> = {
     v2: "close-up aesthetic creator headshot, shoulders and head framing, neat light knit sweater, bright natural window daylight space, clear glowing skin, friendly radiant smile, 8k resolution",
   },
   passport_visa: {
-    v1: "official US passport photo standard, tight head-and-shoulders ID framing, face taking up 60% of total height, neutral calm expression, facing forward looking directly at camera, crisp white shirt, solid off-white studio background, perfectly even passport lighting, sharp 8k ID portrait",
-    v2: "official biometric visa ID photo, tight head-and-shoulders ID framing, face taking up 60% of total height, front facing neutral expression, white studio background, clear face lighting, crisp white collared shirt, high resolution studio photograph",
+    v1: "official US passport photo standard, tight head-and-shoulders ID framing, face taking up 60% of total height, neutral calm expression, facing forward looking directly at camera, dark suit jacket with crisp white shirt, perfectly groomed neat hair, professional salon hair styling, solid off-white studio background, perfectly even passport lighting, sharp 8k ID portrait",
+    v2: "official biometric visa ID photo, tight head-and-shoulders ID framing, face taking up 60% of total height, front facing neutral expression, perfectly groomed neat hair, professional salon hair styling, white studio background, clear face lighting, dark suit jacket with crisp white collared shirt, high resolution studio photograph",
   },
 };
 
@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
           num_inference_steps: 28,
           guidance_scale: 4.2,
           id_weight: 0.95,
-          negative_prompt: "blurry, low quality, distorted face, plastic skin, wax figure, CG render, 3D model, anime, cartoon, heavy airbrushed, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes, dark circles",
+          negative_prompt: "messy hair, unkempt hair, bedhead, blurry, low quality, distorted face, plastic skin, wax figure, CG render, 3D model, anime, cartoon, heavy airbrushed, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes, dark circles",
         },
       }),
       fal.subscribe("fal-ai/flux-pulid", {
@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
           num_inference_steps: 28,
           guidance_scale: 4.2,
           id_weight: 0.95,
-          negative_prompt: "blurry, low quality, distorted face, plastic skin, wax figure, CG render, 3D model, anime, cartoon, heavy airbrushed, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes, dark circles",
+          negative_prompt: "messy hair, unkempt hair, bedhead, blurry, low quality, distorted face, plastic skin, wax figure, CG render, 3D model, anime, cartoon, heavy airbrushed, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes, dark circles",
         },
       }),
     ]);

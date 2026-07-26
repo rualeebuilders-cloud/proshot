@@ -6,24 +6,24 @@ export const maxDuration = 60;
 
 const VARIANT_PROMPTS: Record<string, { v1: string; v2: string }> = {
   realtor_sales: {
-    v1: "tight close-up professional real estate agent headshot, shoulders and head framing, face filling 60% of frame, confident friendly smile, dark navy tailored blazer, bright clean modern office background, soft warm lighting, sharp focus, 8k resolution",
-    v2: "tight close-up professional real estate agent headshot, shoulders and head framing, radiant warm smile, elegant beige blazer, luxury bright interior background, natural window daylight, 8k resolution",
+    v1: "tight close-up professional real estate agent headshot, shoulders and head framing, face filling 60% of frame, confident friendly smile, navy tailored blazer over crisp white collared shirt, bright clean luxury modern interior background, soft warm professional lighting, 8k resolution studio photography",
+    v2: "tight close-up professional real estate agent headshot, shoulders and head framing, radiant warm smile, elegant beige blazer over light shirt, bright sunlit architectural background, natural window daylight, 8k resolution",
   },
   tech_startup: {
-    v1: "close-up modern tech founder headshot, shoulders and head framing, smart casual dark blazer, no tie, relaxed confident expression, softly blurred modern tech workspace backdrop, professional LinkedIn photo, high detail",
-    v2: "close-up modern tech startup founder portrait, shoulders and head framing, neat navy sweater over white shirt, friendly approachable smile, bright modern open office backdrop, 8k resolution",
+    v1: "tight close-up modern tech founder headshot, shoulders and head framing, face filling 60% of frame, crisp white collared shirt under navy modern blazer, relaxed confident expression, bright softly blurred tech hub office with glass and green plants, vibrant natural daylighting, high detail",
+    v2: "tight close-up modern tech startup founder portrait, shoulders and head framing, neat light blue Oxford shirt, friendly approachable smile, bright modern open office backdrop with soft natural lighting, clear glowing skin, 8k resolution",
   },
   corporate_law: {
-    v1: "tight executive corporate headshot, shoulders and head framing, face filling 60% of frame, dark navy business suit, white shirt, neat tie, clean neutral studio background, authoritative posture, sharp professional lighting, 8k resolution",
-    v2: "tight executive attorney headshot, shoulders and head framing, charcoal grey business suit, light blue shirt, clean executive office background, confident warm smile, 8k resolution",
+    v1: "tight executive corporate headshot, shoulders and head framing, face filling 60% of frame, dark navy business suit, crisp white dress shirt with elegant silk tie, clean bright neutral studio background, authoritative posture, sharp professional softbox lighting, 8k resolution",
+    v2: "tight executive attorney headshot, shoulders and head framing, charcoal grey business suit, light blue dress shirt with dark tie, bright modern executive office background, confident warm smile, 8k resolution",
   },
   medical_creator: {
-    v1: "close-up radiant professional doctor portrait, shoulders and head framing, clean bright white lab coat, warm approachable smile, soft high-key studio beauty lighting, flawless complexion, light grey background, high detail",
-    v2: "close-up aesthetic creator headshot, shoulders and head framing, neat light knit sweater, bright natural window daylight space, clear glowing skin, friendly radiant smile, 8k resolution",
+    v1: "close-up radiant professional doctor portrait, shoulders and head framing, clean bright white lab coat over light shirt, warm approachable smile, soft high-key studio beauty lighting, flawless glowing skin, light grey background, high detail",
+    v2: "close-up aesthetic creator headshot, shoulders and head framing, neat light beige knit sweater, bright sunlit studio space, clear radiant skin, friendly engaging smile, 8k resolution",
   },
   passport_visa: {
-    v1: "official US passport photo standard, tight head-and-shoulders ID framing, face taking up 60% of total height, neutral calm expression, facing forward looking directly at camera, clean dark shirt, solid off-white studio background, perfectly even passport lighting, sharp 8k ID portrait",
-    v2: "official biometric visa ID photo, tight head-and-shoulders ID framing, face taking up 60% of total height, front facing neutral expression, white studio background, clear face lighting, neat formal collared shirt, high resolution studio photograph",
+    v1: "official US passport photo standard, tight head-and-shoulders ID framing, face taking up 60% of total height, neutral calm expression, facing forward looking directly at camera, dark navy shirt for contrast, solid off-white studio background, perfectly even bright passport lighting, sharp 8k ID portrait",
+    v2: "official biometric visa ID photo, tight head-and-shoulders ID framing, face taking up 60% of total height, front facing neutral expression, solid white background, bright clear face lighting, neat formal collared shirt, high resolution studio photograph",
   },
 };
 
@@ -42,28 +42,30 @@ export async function POST(req: NextRequest) {
 
     const variantSet = VARIANT_PROMPTS[style] || VARIANT_PROMPTS.realtor_sales;
 
+    const commonNegative = "blurry, low quality, distorted face, plastic skin, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes, dark gloomy mood, muddy contrast, pitch black background, pitch black t-shirt, dark underexposed face, muddy dark shadows";
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [res1, res2]: any = await Promise.all([
       fal.subscribe("fal-ai/flux-pulid", {
         input: {
-          prompt: `${variantSet.v1}, most flattering best-version portrait of the person, confident magnetic gaze, perfectly tailored attire, immaculate studio softbox lighting, ultra sharp focus on eyes, 8k resolution studio photography`,
+          prompt: `${variantSet.v1}, most flattering best-version portrait of the person, vibrant clear skin tone, confident magnetic gaze, bright studio softbox lighting, ultra sharp focus on eyes, 8k resolution studio photography`,
           reference_image_url: referenceUrl,
           image_size: "portrait_4_3",
           num_inference_steps: 28,
           guidance_scale: 4.2,
           id_weight: 0.95,
-          negative_prompt: "blurry, low quality, distorted face, plastic skin, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes",
+          negative_prompt: commonNegative,
         },
       }),
       fal.subscribe("fal-ai/flux-pulid", {
         input: {
-          prompt: `${variantSet.v2}, prime peak attractiveness corporate portrait, warm trustworthy charismatic smile, sharp executive attire, high-end studio illumination, flawless natural skin, 8k resolution`,
+          prompt: `${variantSet.v2}, prime peak attractiveness corporate portrait, radiant vibrant skin, warm trustworthy charismatic smile, sharp executive attire, high-end bright studio illumination, 8k resolution`,
           reference_image_url: referenceUrl,
           image_size: "portrait_4_3",
           num_inference_steps: 28,
           guidance_scale: 4.2,
           id_weight: 0.95,
-          negative_prompt: "blurry, low quality, distorted face, plastic skin, fake face, extra eyes, asymmetrical face, watermark, text, bad anatomy, over-processed, unflattering shadows, double chin, tired eyes",
+          negative_prompt: commonNegative,
         },
       }),
     ]);
